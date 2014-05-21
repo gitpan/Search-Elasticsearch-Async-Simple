@@ -1,0 +1,44 @@
+NAME
+
+Search::Elasticsearch::Async::Simple - Unofficial asynchronous API for
+Elasticsearch using callbacks.
+
+DESCRIPTION
+
+Search::Elasticsearch::Async::Simple is the unofficial asynchronous Perl client
+for Elasticsearch. Unlike the official Search::Elasticsearch::Async module,
+it does not use any library to provide asynchronous interface, only callbacks.
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+    perl Makefile.PL
+    make
+    make test
+    make install
+
+SUPPORT AND DOCUMENTATION
+
+After installing, you can find documentation for this module with the perldoc
+command.
+
+    perldoc Search::Elasticsearch::Async::Simple
+
+You can also look for information at:
+
+    Repository
+        http://github.com/AdCampRu/search-elasticsearch-async-simple
+    Bug tracker
+        http://github.com/AdCampRu/search-elasticsearch-async-simple/issues
+
+AUTHOR
+
+Denis Ibaev, dionys@cpan.org.
+
+LICENSE
+
+This program is free software; you can redistribute it and/or modify it under
+the same terms as Perl itself.
+
+See http://dev.perl.org/licenses/ for more information.

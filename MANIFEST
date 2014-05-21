@@ -1,0 +1,36 @@
+Changes
+lib/Search/Elasticsearch/Async/Simple.pm
+lib/Search/Elasticsearch/Client/Async/Simple/Direct.pm
+lib/Search/Elasticsearch/Client/Async/Simple/Direct/Cat.pm
+lib/Search/Elasticsearch/Client/Async/Simple/Direct/Cluster.pm
+lib/Search/Elasticsearch/Client/Async/Simple/Direct/Indices.pm
+lib/Search/Elasticsearch/Client/Async/Simple/Direct/Nodes.pm
+lib/Search/Elasticsearch/Client/Async/Simple/Direct/Snapshot.pm
+lib/Search/Elasticsearch/Cxn/Async/Simple/AEHTTP.pm
+lib/Search/Elasticsearch/CxnPool/Async/Simple/Sniff.pm
+lib/Search/Elasticsearch/CxnPool/Async/Simple/Static.pm
+lib/Search/Elasticsearch/CxnPool/Async/Simple/Static/NoPing.pm
+lib/Search/Elasticsearch/Role/Cxn/Async/Simple.pm
+lib/Search/Elasticsearch/Role/Client/Async/Simple.pm
+lib/Search/Elasticsearch/Role/Client/Async/Simple/Direct.pm
+lib/Search/Elasticsearch/Transport/Async/Simple.pm
+Makefile.PL
+MANIFEST
+README
+t/30-role-async-client.t
+t/31-role-async-client-direct.t
+t/40-client-async-direct.t
+t/50-client-async-direct-cat.t
+t/51-client-async-direct-cluster.t
+t/52-client-async-direct-indices.t
+t/53-client-async-direct-nodes.t
+t/54-client-async-direct-snapshot.t
+t/61-cxnpool-async-static.t
+t/62-cxnpool-async-static-noping.t
+t/63-cxnpool-async-sniff.t
+t/90-pod.t
+t/91-pod-coverage.t
+t/92-manifest.t
+t/93-changes.t
+META.yml                                 Module YAML meta-data (added by MakeMaker)
+META.json                                Module JSON meta-data (added by MakeMaker)
