@@ -8,7 +8,7 @@ use Search::Elasticsearch::Util qw(parse_params);
 extends 'Search::Elasticsearch';
 
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 sub new {

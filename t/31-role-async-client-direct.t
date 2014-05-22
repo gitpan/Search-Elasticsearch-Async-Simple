@@ -5,6 +5,8 @@ use warnings;
 
 use Test::More;
 
+use B ();
+
 
 BEGIN {
 	use_ok 'Search::Elasticsearch::Role::Client::Async::Simple::Direct';

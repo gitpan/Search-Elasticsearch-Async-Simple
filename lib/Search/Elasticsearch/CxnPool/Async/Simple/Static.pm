@@ -36,7 +36,7 @@ sub next_cxn {
 			}
 		}
 
-		if ($fnd //= shift(@skip)) {
+		if ($fnd ||= shift(@skip)) {
 			return $fnd->pings_ok(sub {
 				return $cb->($fnd) if $_[0];
 				$sub->();
