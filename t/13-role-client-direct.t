@@ -13,18 +13,18 @@ BEGIN {
 }
 
 BEGIN {
-	package My::Client;
+	package Local::Client;
 
 	use Moo;
 
 	with 'Search::Elasticsearch::Role::Client::Async::Simple::Direct';
 }
 
-ok (My::Client->can('_install_api'));
-is exporter('My::Client::_install_api'), 'Search::Elasticsearch::Role::Client::Async::Simple::Direct';
+ok (Local::Client->can('_install_api'));
+is exporter('Local::Client::_install_api'), 'Search::Elasticsearch::Role::Client::Async::Simple::Direct';
 
-ok (My::Client->can('perform_request'));
-is exporter('My::Client::perform_request'), 'Search::Elasticsearch::Role::Client::Async::Simple';
+ok (Local::Client->can('perform_request'));
+is exporter('Local::Client::perform_request'), 'Search::Elasticsearch::Role::Client::Async::Simple';
 
 
 done_testing;

@@ -20,6 +20,7 @@ no_index:
     - t
 requires:
   AnyEvent::HTTP: 0
+  Module::Runtime: 0
   Moo: 0
   Package::Stash: 0
   Search::Elasticsearch: 1.10
@@ -30,4 +31,4 @@ resources:
   bugtracker: http://github.com/dionys/search-elasticsearch-async/issues
   license: http://dev.perl.org/licenses/
   repository: http://github.com/dionys/search-elasticsearch-async
-version: 0.02
+version: 0.03

@@ -11,7 +11,7 @@ BEGIN {
 }
 
 BEGIN {
-	package My::Client;
+	package Local::Client;
 
 	use Moo;
 
@@ -21,7 +21,7 @@ BEGIN {
 }
 
 BEGIN {
-	package My::Transport;
+	package Local::Transport;
 
 	use Moo;
 	use Test::More;
@@ -34,14 +34,14 @@ BEGIN {
 	}
 }
 
-my $obj = My::Client->new(logger => undef, transport => My::Transport->new);
+my $obj = Local::Client->new(logger => undef, transport => Local::Transport->new);
 
 ok $obj->can('perform_request');
 
 my $val;
 
-$obj->perform_request(sub { $val = 1; });
-ok $val == 1;
+$obj->perform_request(sub { $val = 'foo'; });
+is $val, 'foo';
 
 
 done_testing;

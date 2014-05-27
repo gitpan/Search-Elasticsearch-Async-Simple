@@ -28,9 +28,11 @@ command.
 You can also look for information at:
 
     Repository
-        http://github.com/AdCampRu/search-elasticsearch-async-simple
+        http://github.com/dionys/search-elasticsearch-async-simple
     Bug tracker
-        http://github.com/AdCampRu/search-elasticsearch-async-simple/issues
+        http://github.com/dionys/search-elasticsearch-async-simple/issues
+    MetaCPAN
+        http://metacpan.org/release/Search-Elasticsearch-Async-Simple
 
 AUTHOR
 

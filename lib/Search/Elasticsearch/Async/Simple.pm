@@ -5,14 +5,24 @@ use Moo;
 use Search::Elasticsearch 1.10;
 use Search::Elasticsearch::Util qw(parse_params);
 
+use namespace::clean;
+
 extends 'Search::Elasticsearch';
 
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 
 sub new {
 	my ($class, $pars) = parse_params(@_);
+
+	for (qw(client cxn cxn_pool transport)) {
+		next unless exists($pars->{$_}) && defined($pars->{$_});
+		next if index($pars->{$_}, '+')             == 0;
+		next if index($pars->{$_}, 'Async::Simple') == 0;
+
+		$pars->{$_} = 'Async::Simple::' . $pars->{$_};
+	}
 
 	return $class->SUPER::new({
 		client              => 'Async::Simple::Direct',
@@ -22,14 +32,6 @@ sub new {
 		%$pars,
 	});
 }
-
-
-package
-	Search::Elasticsearch::Role::Is_Async;
-
-use Moo::Role;
-
-use namespace::clean;
 
 
 1;
@@ -46,7 +48,7 @@ Search::Elasticsearch::Async::Simple - Unofficial asynchronous API for Elasticse
     use AnyEvent ();
     use Search::Elasticsearch::Async::Simple ();
 
-    my $es = Search::Elasticsearch::Async::Simple->new;
+    my $es = Search::Elasticsearch::Async::Simple->new(cxn_pool => 'Static::NoPing');
     my $cv = AE::cv;
 
     $es->search(

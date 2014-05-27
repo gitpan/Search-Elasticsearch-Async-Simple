@@ -2,6 +2,7 @@ package Search::Elasticsearch::Client::Async::Simple::Direct;
 
 use Moo;
 
+use Search::Elasticsearch::Role::Is_Async::Loader ();
 use Search::Elasticsearch::Util qw(load_plugin);
 
 use namespace::clean;

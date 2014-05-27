@@ -2,6 +2,7 @@ package Search::Elasticsearch::CxnPool::Async::Simple::Sniff;
 
 use Moo;
 
+use Search::Elasticsearch::Role::Is_Async::Loader ();
 use Search::Elasticsearch::Util qw(new_error);
 
 use namespace::clean;

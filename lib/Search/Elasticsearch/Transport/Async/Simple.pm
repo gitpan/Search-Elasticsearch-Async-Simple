@@ -4,6 +4,7 @@ use Moo;
 
 use Time::HiRes qw(time);
 
+use Search::Elasticsearch::Role::Is_Async::Loader ();
 use Search::Elasticsearch::Util qw(upgrade_error);
 
 use namespace::clean;

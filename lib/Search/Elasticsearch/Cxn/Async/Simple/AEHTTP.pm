@@ -4,6 +4,8 @@ use Moo;
 
 use AnyEvent::HTTP qw(http_request);
 
+use Search::Elasticsearch::Role::Is_Async::Loader ();
+
 use namespace::clean;
 
 with 'Search::Elasticsearch::Role::Cxn::Async::Simple',
@@ -37,11 +39,7 @@ sub perform_request {
 					$_[1],
 				);
 			};
-
-			return $cb->($code, $res) unless $@;
-
-			$self->logger->error($@);
-			$cb->();
+			$cb->($@ ? () : ($code, $res));
 		}
 	);
 

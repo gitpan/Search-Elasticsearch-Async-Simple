@@ -10,7 +10,10 @@ with 'Search::Elasticsearch::Role::Cxn';
 sub pings_ok {
 	my ($self, $cb) = @_;
 
-	$self->logger->infof('Pinging [%s]', $self->stringify);
+	my $log = $self->logger;
+
+	$log->infof('Pinging [%s]', $self->stringify)
+		if $log->is_info;
 	$self->perform_request(
 		{
 			method  => 'HEAD',
@@ -19,11 +22,14 @@ sub pings_ok {
 		},
 		sub {
 			if (@_) {
-				$self->logger->infof('Marking [%s] as live', $self->stringify);
+				$log->infof('Marking [%s] as live', $self->stringify)
+					if $log->is_info;
 				$self->mark_live();
 				$cb->(1);
 			}
 			else {
+				$log->debug($@)
+					if $log->is_debug;
 				$self->mark_dead();
 				$cb->();
 			}
@@ -36,7 +42,10 @@ sub pings_ok {
 sub sniff {
 	my ($self, $cb) = @_;
 
-	$self->logger->infof('Sniffing [%s]', $self->stringify);
+	my $log = $self->logger;
+
+	$log->infof('Sniffing [%s]', $self->stringify)
+		if $log->is_info;
 	$self->perform_request(
 		{
 			method  => 'GET',
@@ -49,7 +58,8 @@ sub sniff {
 				$cb->($_[1]->{nodes});
 			}
 			else {
-				$self->logger->debug($@);
+				$log->debug($@)
+					if $log->is_debug;
 				$cb->();
 			}
 		}

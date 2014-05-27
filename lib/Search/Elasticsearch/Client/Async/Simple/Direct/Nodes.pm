@@ -2,6 +2,8 @@ package Search::Elasticsearch::Client::Async::Simple::Direct::Nodes;
 
 use Moo;
 
+use namespace::clean;
+
 extends 'Search::Elasticsearch::Client::Direct::Nodes';
 with    'Search::Elasticsearch::Role::API';
 with    'Search::Elasticsearch::Role::Client::Async::Simple::Direct';
